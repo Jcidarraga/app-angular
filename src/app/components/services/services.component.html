@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 <div class="container">
-    <div class="row">
-        <div class="card" style="width: 17rem;">
+    <div class="cards-container">
+        <div class="card product-card">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Título de la tarjeta</h5>
@@ -10,8 +10,7 @@
                 <a *ngIf="isLoggedIn=='true'" (click)="pedirServicio()" class="btn btn-primary">Solicitar servicio</a>
             </div>
         </div>
-        &nbsp;
-        <div class="card" style="width: 17rem;">
+        <div class="card product-card">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Título de la tarjeta</h5>
@@ -20,8 +19,7 @@
                 <a *ngIf="isLoggedIn=='true'" class="btn btn-primary" disabled>Proximamente</a>
             </div>
         </div>
-        &nbsp;
-        <div class="card" style="width: 17rem;">
+        <div class="card product-card">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Título de la tarjeta</h5>
@@ -30,8 +28,7 @@
                 <a *ngIf="isLoggedIn=='true'" class="btn btn-primary" disabled>Proximamente</a>
             </div>
         </div>
-        &nbsp;
-        <div class="card" style="width: 17rem;">
+        <div class="card product-card">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Título de la tarjeta</h5>
@@ -40,5 +37,4 @@
                 <a *ngIf="isLoggedIn=='true'" class="btn btn-primary" disabled>Proximamente</a>
             </div>
         </div>
-    </div>
 </div>
