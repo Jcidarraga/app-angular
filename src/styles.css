@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --very-light-pink: #C7C7C7;
+    --white: #FFFFFF;
+    --black: #000000;
+    --text-input-field: #F7F7F7;
+    --pink: #FFC2F5;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}

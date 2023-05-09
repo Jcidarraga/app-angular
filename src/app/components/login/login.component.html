@@ -1,0 +1,26 @@
+<div class="login">
+  <div class="form-container">
+    <img src="./assets/cochecito-de-bebe.png" alt="logo" class="logo">
+
+    <form>
+      <div class="form-container">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Usuario</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <a (click)="goForgotPass()" id="style-2" data-replace="¿Olvidaste tu contraseña?">
+          <span>¿Olvidaste tu contraseña?</span>
+        </a>
+
+        <button type="submit" class="btn btn-outline-info" (click)="goContainer()">Iniciar Sesión</button>
+        <p>¿No tienes cuenta?</p>
+
+      </div>
+      <button type="submit" class="btn btn-outline-info" (click)="goRegister()">Crear Cuenta</button>
+    </form>
+  </div>
+</div>

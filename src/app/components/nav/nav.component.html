@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="./assets/cochecito-de-bebe.png" alt="logo" class="logo" height="60px">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/services">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+      </ul>
+      <!---<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="#">Acción</a></li>
+            <li><a class="dropdown-item" href="#">Otra acción</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+          </ul>
+        </li>  --->
+      <form class="media">
+
+        <button *ngIf="isLoggedIn=='true'; else menor" class="btn btn-outline-a" type="submit" 
+        (click)="cerrar()">Cerrar Sesión</button>
+
+        <ng-template #menor>
+          <button class="btn btn-outline-info" type="submit" (click)="goRegister()">Registrate</button>&nbsp;
+          <button class="btn btn-outline-a" type="submit" (click)="goLogin()">Inicia Sesión</button>
+        </ng-template>
+
+      </form>
+    </div>
+  </div>
+</nav>

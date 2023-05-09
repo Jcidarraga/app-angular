@@ -1,0 +1,22 @@
+.btn-outline-a{
+    color: #FFC2F5;
+    border: solid 1px #FFC2F5;
+}
+
+.btn-outline-a:hover{
+    color: black;
+    background-color: #FFC2F5;
+    
+}
+
+
+@media (max-width: 640px) {
+    .navbar {
+        display: block;
+    }
+
+    .media{
+        display: inline-flex;
+        flex-direction: column;
+    }
+}

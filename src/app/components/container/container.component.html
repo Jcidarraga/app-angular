@@ -1,0 +1,14 @@
+<app-nav></app-nav>
+
+<app-home *ngIf="isLoggedIn=='false'"></app-home>
+
+
+<app-home-ninero *ngIf="isLoggedIn=='true'"></app-home-ninero>
+
+
+<ng-template #menor></ng-template>
+
+
+
+<!--<p *ngIf="isLoggedIn=='true'; else menor">Es mayor de edad.</p>
+<ng-template #menor><p>Es un menor de edad.</p></ng-template>-->
