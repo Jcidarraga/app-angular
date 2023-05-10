@@ -26,11 +26,11 @@ import { MessageSolicitudComponent } from './components/message-solicitud/messag
     HomeNineroComponent,
     ServicesComponent,
     FormServicioComponent,
-    MessageSolicitudComponent
+    MessageSolicitudComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
