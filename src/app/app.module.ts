@@ -13,6 +13,8 @@ import { HomeNineroComponent } from './components/home-ninero/home-ninero.compon
 import { ServicesComponent } from './components/services/services.component';
 import { FormServicioComponent } from './components/form-servicio/form-servicio.component';
 import { MessageSolicitudComponent } from './components/message-solicitud/message-solicitud.component';
+import { YoutubePipe } from './pipe/youtube.pipe';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { MessageSolicitudComponent } from './components/message-solicitud/messag
     ServicesComponent,
     FormServicioComponent,
     MessageSolicitudComponent,
+    YoutubePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
