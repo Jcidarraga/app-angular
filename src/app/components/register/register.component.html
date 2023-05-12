@@ -2,24 +2,24 @@
 <div class="login">
     <div class="form-container">
         <img src="./assets/logo.png" alt="logo" class="logo">
-        <form>
+        <form (ngSubmit)="registrar()" [formGroup]="registarUsuario">
             <div class="form-container">
                 <h1 class="title">Registrarse</h1>
                 <p>Selecciona tu rol</p>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput">Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                    <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Contraseña">
                     <label for="floatingPassword">Contraseña</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                    <input type="password" class="form-control"  formControlName="repetirPassword" id="floatingPassword" placeholder="Contraseña">
                     <label for="floatingPassword">Repetir Contraseña</label>
                 </div>
             </div>
-            <div class="form-row">
+            <!--<div class="form-row">
                 <div class="form-floating mb-3">
                     <select id="inputState" class="form-control" id="floatingInput">
                         <option selected>Escoge...</option>
@@ -28,8 +28,8 @@
                     </select>
                     <label for="inputState">Rol</label>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-outline-info" (click)="goLogin()">Crear cuenta</button>
+            </div>-->
+            <button type="submit" class="btn btn-outline-info">Crear cuenta</button>
         </form>
     </div>
 </div>
