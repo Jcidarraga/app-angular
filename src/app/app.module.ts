@@ -13,7 +13,9 @@ import { HomeNineroComponent } from './components/home-ninero/home-ninero.compon
 import { ServicesComponent } from './components/services/services.component';
 import { FormServicioComponent } from './components/form-servicio/form-servicio.component';
 import { MessageSolicitudComponent } from './components/message-solicitud/message-solicitud.component';
-import {HttpClientModule} from '@angular/common/http'
+import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import {HttpClientModule} from '@angular/common/http'
     ServicesComponent,
     FormServicioComponent,
     MessageSolicitudComponent,
+    VerificarCorreoComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
