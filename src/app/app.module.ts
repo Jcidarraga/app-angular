@@ -16,6 +16,8 @@ import { MessageSolicitudComponent } from './components/message-solicitud/messag
 import { VerificarCorreoComponent } from './components/verificar-correo/verificar-correo.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule} from '@angular/fire/compat'
+import { enviroment } from 'src/enviroments/enviroments';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(enviroment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
