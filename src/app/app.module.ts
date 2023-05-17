@@ -18,6 +18,9 @@ import { SpinnerComponent } from './shared/spinner/spinner.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule} from '@angular/fire/compat'
 import { enviroment } from 'src/enviroments/enviroments';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { enviroment } from 'src/enviroments/enviroments';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(enviroment.firebaseConfig)
+    AngularFireModule.initializeApp(enviroment.firebaseConfig),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
