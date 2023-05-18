@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     private afAuth: AngularFireAuth, private toastr: ToastrService,
     private firebaseError: FirebaseCodeErrorService) {
     this.loginUsuario = this.fb.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     })
   }

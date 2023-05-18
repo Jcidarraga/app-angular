@@ -19,7 +19,7 @@ export class ForgotPassComponent implements OnInit {
     private afAuth: AngularFireAuth, private toastr: ToastrService,
     private firebaseError: FirebaseCodeErrorService) {
     this.recuperarUser = this.fb.group({
-      correo: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
     })
   }
 

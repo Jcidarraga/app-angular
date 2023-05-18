@@ -7,19 +7,45 @@
                 <h1 class="title">Registrarse</h1>
                 <p>Selecciona tu rol</p>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" formControlName="email" id="floatingInput"
+                    <input type="email" class="form-control" autocomplete="false" formControlName="email" id="floatingInput"
                         placeholder="name@example.com">
                     <label for="floatingInput">Email</label>
+                    <span
+                        *ngIf="registarUsuario.get('email')?.hasError('required') && registarUsuario.get('email')?.touched"
+                        class="text-danger error-label">
+                        El <strong>correo </strong> es requerido
+                    </span>
+                    <span
+                        *ngIf="registarUsuario.get('email')?.hasError('email') && registarUsuario.get('email')?.touched"
+                        class="text-danger error-label">
+                        El <strong>correo </strong> es invalido
+                    </span>
                 </div>
                 <div class="form-floating mb-3">
                     <input type="password" class="form-control" formControlName="password" id="floatingPassword"
                         placeholder="Contraseña">
                     <label for="floatingPassword">Contraseña</label>
+                    <span
+                        *ngIf="registarUsuario.get('password')?.hasError('required') && registarUsuario.get('password')?.touched"
+                        class="text-danger error-label">
+                        La <strong>contraseña </strong> es requerida
+                    </span>
+                    <span
+                        *ngIf="registarUsuario.get('password')?.hasError('minlength') && registarUsuario.get('password')?.touched"
+                        class="text-danger error-label">
+                        La <strong>contraseña </strong> debe tener 6 caracteres
+                    </span>
                 </div>
+
                 <div class="form-floating mb-3">
                     <input type="password" class="form-control" formControlName="repetirPassword" id="floatingPassword"
                         placeholder="Contraseña">
                     <label for="floatingPassword">Repetir Contraseña</label>
+                    <span
+                        *ngIf="registarUsuario.get('repetirPassword')?.hasError('required') && registarUsuario.get('repetirPassword')?.touched"
+                        class="text-danger error-label">
+                        La <strong>contraseña </strong> es requerida
+                    </span>
                 </div>
             </div>
             <!--<div class="form-row">
@@ -32,7 +58,8 @@
                     <label for="inputState">Rol</label>
                 </div>
             </div>-->
-            <button type="submit" class="btn btn-outline-info">Crear cuenta</button>
+            <button type="submit" [disabled]="registarUsuario.invalid" class="btn btn-outline-info">Crear
+                cuenta</button>
         </form>
     </div>
     <app-spinner *ngIf="loading"></app-spinner>

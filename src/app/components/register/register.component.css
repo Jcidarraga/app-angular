@@ -53,6 +53,10 @@ p {
     width: 100%;
 }
 
+.error-label{
+    margin-left: 10px;
+}
+
 @media (max-width:640px) {
     .login{
         margin-top: 0px;

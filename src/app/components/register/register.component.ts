@@ -13,23 +13,21 @@ import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.s
 export class RegisterComponent implements OnInit {
 
   registarUsuario: FormGroup;
-
   loading: boolean = false;
+
+  ngOnInit() {
+  }
 
   constructor(private router: Router, private fb: FormBuilder,
     private afAuth: AngularFireAuth, private toastr: ToastrService, 
     private firebaseError: FirebaseCodeErrorService) {
 
     this.registarUsuario = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       repetirPassword: ['', Validators.required]
     })
   }
-
-  ngOnInit() {
-  }
-
 
   registrar() {
     const email = this.registarUsuario.value.email;
@@ -54,13 +52,5 @@ export class RegisterComponent implements OnInit {
         this.loading = false;
         this.toastr.error(this.firebaseError.codeError(error.code), 'Error')
       })
-  }
-
-
-
-  goLogin() {
-    //  this.isLoggedIn = true;
-    //this.router.navigate(['/login']);
-    // localStorage.setItem('isLoggedIn', String(this.isLoggedIn));
   }
 }
