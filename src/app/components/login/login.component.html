@@ -30,14 +30,23 @@
         </div>
         <button type="submit" class="btn btn-outline-info" [disabled]="loginUsuario.invalid">Iniciar Sesión</button>
         <p class="mt-3">¿No tienes cuenta?
-          <a (click)="goRegister()" data-replace="Crear Cuenta">
+          <a (click)="goRegister()" data-replace="Crear Cuenta" class="a">
             <span>Crear Cuenta</span>
           </a>
         </p>
-        <a (click)="goForgotPass()" data-replace="Recuperar Contraseña">
+        <a (click)="goForgotPass()" data-replace="Recuperar Contraseña" class="a">
           <span>Recuperar Contraseña</span>
         </a>
       </div>
+      <div class="row mt-2">
+        <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
+            <div class="card shadow text-center">
+                <div class="card-body">
+                    <img src="../../../assets/icons8-google-48.png" alt="" height="24px" width="24px"> Sign In with Google
+                </div>
+            </div>
+        </a>
+    </div>
     </form>
   </div>
   <app-spinner *ngIf="loading"></app-spinner>

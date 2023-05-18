@@ -13,7 +13,7 @@
 
 .login {
   width: 100%;
-  margin-top: 150px;
+  margin-top: 100px;
   display: grid;
   place-items: center;
 }
@@ -49,7 +49,7 @@ p {
   width: 100%;
 }
 
-a {
+.a {
   text-align: center;
   overflow: hidden;
   position: relative;
@@ -59,15 +59,15 @@ a {
   border-bottom: 2px solid var(--bs-info);
 }
 
-a::before,
-a::after {
+.a::before,
+.a::after {
   content: '';
   position: absolute;
   width: 100%;
   left: 0;
 }
 
-a::before {
+.a::before {
   background-color: var(--bs-info);
   height: 2px;
   bottom: 0;
@@ -76,7 +76,7 @@ a::before {
   transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-a::after {
+.a::after {
   content: attr(data-replace);
   height: 100%;
   top: 0;
@@ -86,25 +86,25 @@ a::after {
   color: var(--bs-info);
 }
 
-a:hover::before {
+.a:hover::before {
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
 
-a:hover::after {
+.a:hover::after {
   transform: translate3d(0, 0, 0);
 }
 
-a span {
+.a span {
   display: inline-block;
   transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-a:hover span {
+.a:hover span {
   transform: translate3d(-200%, 0, 0);
 }
 
-a {
+.a {
   color: #18272F;
   font-weight: 700;
   vertical-align: top;

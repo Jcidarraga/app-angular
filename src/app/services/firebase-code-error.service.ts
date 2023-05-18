@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
+import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider } from '@angular/fire/auth'
 import { FirebaseCodeErrorEnum } from '../utils/firebase-code-error';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseCodeErrorService {
 
-  constructor() { }
+  constructor(private router: Router, private afAuth: AngularFireAuth) { }
 
 
   codeError(code: string) {
@@ -29,5 +32,16 @@ export class FirebaseCodeErrorService {
       default:
         return 'error desconocido'
     }
+  }
+
+  googleSignIn() {
+    return this.afAuth.signInWithPopup(new GoogleAuthProvider).then(res => {
+
+      this.router.navigate(['/container']);
+      localStorage.setItem('token', JSON.stringify(res.user?.uid));
+
+    }, err => {
+      alert(err.message);
+    })
   }
 }
