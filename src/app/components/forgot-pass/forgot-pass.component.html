@@ -1,17 +1,19 @@
 <app-nav></app-nav>
 <div class="login">
-    <div class="form-container">
+    <div *ngIf="!loading" class="form-container">
         <img src="./assets/logo.png" alt="logo" class="logo">
 
-        <form>
+        <form [formGroup]="recuperarUser" (ngSubmit)="recuperar()">
             <div class="form-container">
                 <h1 style="text-align: center;">Recuperar</h1>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" formControlName="correo" id="floatingInput"
+                        placeholder="name@example.com">
                     <label for="floatingInput">Email</label>
                 </div>
-                <button type="submit" class="btn btn-outline-info" (click)="goLogin()">Recuperar</button>
+                <button type="submit" class="btn btn-outline-info">Recuperar</button>
             </div>
         </form>
     </div>
+    <app-spinner *ngIf="loading"></app-spinner>
 </div>
