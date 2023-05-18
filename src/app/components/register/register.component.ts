@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { ToastrService } from 'ngx-toastr';
+import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   loading: boolean = false;
 
   constructor(private router: Router, private fb: FormBuilder,
-    private afAuth: AngularFireAuth, private toastr: ToastrService) {
+    private afAuth: AngularFireAuth, private toastr: ToastrService, 
+    private firebaseError: FirebaseCodeErrorService) {
 
     this.registarUsuario = this.fb.group({
       email: ['', Validators.required],
@@ -49,24 +51,12 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['./login'])
 
       }).catch((error) => {
-        console.log(error)
-        this.toastr.error(this.firebaseError(error.code), 'Error')
+        this.loading = false;
+        this.toastr.error(this.firebaseError.codeError(error.code), 'Error')
       })
   }
 
-  firebaseError(code: string) {
-    this.loading = false;
-    switch (code) {
-      case 'auth/email-already-in-use':
-        return 'El email ya esta registrado'
-      case 'auth/weak-password':
-        return 'La contraseña es debil'
-      case 'auth/invalid-email':
-        return 'Correo invalido'
-      default:
-        return 'error x'
-    }
-  }
+
 
   goLogin() {
     //  this.isLoggedIn = true;
