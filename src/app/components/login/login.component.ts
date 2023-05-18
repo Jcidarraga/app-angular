@@ -5,7 +5,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastrService } from 'ngx-toastr';
 import { FirebaseCodeErrorService } from 'src/app/services/firebase-code-error.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,6 +14,8 @@ export class LoginComponent implements OnInit {
 
   loginUsuario: FormGroup;
   loading: boolean = false;
+  isLoggedIn = false;
+
   ngOnInit(): void {
 
   }
@@ -28,16 +29,11 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  isLoggedIn = false;
-
   goRegister() {
     this.router.navigate(['/register']);
   }
   goForgotPass() {
     this.router.navigate(['/forgotPass']);
-  }
-  goContainer() {
-
   }
 
   login() {
@@ -46,9 +42,14 @@ export class LoginComponent implements OnInit {
     this.loading = true
 
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
-      this.isLoggedIn = !this.isLoggedIn;
-      this.router.navigate(['/container']);
-      localStorage.setItem('isLoggedIn', String(this.isLoggedIn));
+
+      if (user.user?.emailVerified) {
+        this.isLoggedIn = !this.isLoggedIn;
+        this.router.navigate(['/container']);
+        localStorage.setItem('isLoggedIn', String(this.isLoggedIn));
+      } else {
+        this.router.navigate(['/verificarCorreo']);
+      }
     }).catch((error) => {
       this.loading = false
       this.toastr.error(this.firebaseError.codeError(error.code), 'Error')

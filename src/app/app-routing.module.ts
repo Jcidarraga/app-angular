@@ -12,7 +12,6 @@ import { VerificarCorreoComponent } from './components/verificar-correo/verifica
 
 const routes: Routes = [
   { path: '', redirectTo: 'container', pathMatch: 'full' },
-  
   { path: 'container', component: ContainerComponent },
   { path: 'login', component: LoginComponent },
   { path: 'nav', component: NavComponent },

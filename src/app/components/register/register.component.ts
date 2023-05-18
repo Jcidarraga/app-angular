@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   }
 
   constructor(private router: Router, private fb: FormBuilder,
-    private afAuth: AngularFireAuth, private toastr: ToastrService, 
+    private afAuth: AngularFireAuth, private toastr: ToastrService,
     private firebaseError: FirebaseCodeErrorService) {
 
     this.registarUsuario = this.fb.group({
@@ -45,12 +45,22 @@ export class RegisterComponent implements OnInit {
     this.afAuth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.loading = false;
-        this.toastr.success('El usuario fue registrado con exito!', 'Usuario registrado')
-        this.router.navigate(['./login'])
-
+        this.verificarCorreo();
       }).catch((error) => {
         this.loading = false;
         this.toastr.error(this.firebaseError.codeError(error.code), 'Error')
       })
+  }
+
+  verificarCorreo() {
+    this.afAuth.currentUser
+      .then((user) => user?.sendEmailVerification())
+      .then(() => {
+        this.toastr.info(
+          'Le enviamos un correo electronico para su verificacion',
+          'Verificar correo'
+        );
+        this.router.navigate(['/login']);
+      });
   }
 }

@@ -1,0 +1,25 @@
+.login {
+    width: 100%;
+    margin-top: 150px;
+    display: grid;
+    place-items: center;
+}
+
+.form-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 10px;
+    justify-self: center;
+}
+
+@media (max-width:640px) {
+    .form {
+        height: 100%;
+        justify-content: space-between;
+    }
+}
