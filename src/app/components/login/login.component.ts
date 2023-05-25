@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
       if (user.user?.emailVerified) {
         this.isLoggedIn = !this.isLoggedIn;
-        this.router.navigate(['/container']);
+        this.router.navigate(['/pedirServicio']);
         localStorage.setItem('isLoggedIn', String(this.isLoggedIn));
       } else {
         this.router.navigate(['/verificarCorreo']);

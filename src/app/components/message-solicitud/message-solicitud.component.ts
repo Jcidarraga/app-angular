@@ -17,7 +17,7 @@ export class MessageSolicitudComponent implements OnInit {
   isLoggedIn = false;
 
   goContainer() {
-    this.router.navigate(['/container']);
+    this.router.navigate(['/services']);
   }
 
 }

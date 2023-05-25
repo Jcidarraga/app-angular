@@ -12,9 +12,14 @@
 
 .card {
     margin-bottom: 10px;
+    background: #3f474f;
+    color: white;
 }
 
 .product-card {
     width: 240px;
 }
 
+.btn{
+    color: white;
+}

@@ -37,7 +37,7 @@ export class FirebaseCodeErrorService {
   googleSignIn() {
     return this.afAuth.signInWithPopup(new GoogleAuthProvider).then(res => {
 
-      this.router.navigate(['/container']);
+      this.router.navigate(['/pedirServicio']);
       localStorage.setItem('token', JSON.stringify(res.user?.uid));
 
     }, err => {

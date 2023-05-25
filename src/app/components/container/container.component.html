@@ -2,13 +2,12 @@
 
 
 <app-home *ngIf="isLoggedIn=='false'"></app-home>
+<app-home *ngIf="isLoggedIn=='true'"></app-home>
 
-
-<app-home-ninero *ngIf="isLoggedIn=='true'"></app-home-ninero>
+<!--<app-home-ninero *ngIf="isLoggedIn=='true'"></app-home-ninero>-->
 
 
 <ng-template #menor></ng-template>
-
 
 
 <!--<p *ngIf="isLoggedIn=='true'; else menor">Es mayor de edad.</p>
