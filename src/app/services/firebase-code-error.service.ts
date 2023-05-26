@@ -30,7 +30,7 @@ export class FirebaseCodeErrorService {
         return 'El email no esta registrado'
 
       default:
-        return 'error desconocido'
+        return 'Intenta de nuevo'
     }
   }
 
