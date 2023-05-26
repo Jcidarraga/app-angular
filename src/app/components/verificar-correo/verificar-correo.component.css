@@ -16,6 +16,9 @@
     margin-bottom: 10px;
     justify-self: center;
 }
+h6{
+    color: white;
+}
 
 @media (max-width:640px) {
     .form {
